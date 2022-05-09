@@ -1,13 +1,36 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  body {
+    @apply flex h-screen justify-center items-center;
+  }
+  h1 {
+    @apply text-3xl font-bold text-center my-6;
+  }
+  main div:nth-child(1),
+  main div:nth-child(2),
+  main div:nth-child(4),
+  main div:nth-child(5),
+  main div:nth-child(7),
+  main div:nth-child(8) {
+    @apply border-r;
+  }
+  main div:nth-child(1),
+  main div:nth-child(2),
+  main div:nth-child(3),
+  main div:nth-child(4),
+  main div:nth-child(5),
+  main div:nth-child(6) {
+    @apply border-b;
+  }
+}
+@layer components {
+  .main {
+    @apply container grid grid-cols-3 grid-rows-3 w-96 h-96;
+  }
+  .square {
+    @apply h-32 w-32 border-black flex text-9xl justify-center items-center;
+  }
 }
